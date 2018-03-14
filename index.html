@@ -13,69 +13,33 @@
 <body>
     <br>
     <div id="game">
-        <h1>The Psychic Game</h1>
+        <strong>
+            <h1>The Psychic Game</h1>
+        </strong>
+
+        <p>Guess what letter I'm thinking of:</p>
+
+        <p>Wins:
+            <span id="wins"></span>
+        </p>
+        <p>Losses:
+            <span id="losses"></span>
+        </p>
+        <p>Guesses Left:
+            <span id="guessesLeft"></span>
+        </p>
+        <p>Guesses Made So Far:
+            <span id="guessesMade"></span>
+        </p>
     </div>
 
-    <script>
-
-        // src="Assets/javascript/games.js"> ??????? not sure whey tutor had me put this directly after the script tag
-
-        // **VARIABLES**
-
-        // this variable is establised so that i have a means to produce letter gues by both me and computer. As well, our functions and methods to navigate
-        var computerChoices = ["a", "b", "c"];
-        //"d", "e", "f", "g", "h", "i", "j" ,"k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-        // this variables are needed to keep count and measure success and track guesses attempted
-        var wins = 0;
-        var losses = 0;
-        var guessesRemaining = 10;
-        var letterCount = [];
-
-        // FUNCTIONS   
-
-        document.onkeyup = function (event) {
-
-            var userGuesses = event.key; //does the key pressed not register as a guess counted or do you have to specify in you if statement? Do I have to account for every possible guess? why can't I do if (userGuesses === computerGuesses) 
-            alert("User guess: " + userGuesses);
-
-            // for (guessesRemaining = 9; guessesRemaining => 0; guessesRemaining - 1) { --maybe a for loop or while loop or do while loop
-
-            var computerGuesses = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            alert("Computer guess: " + computerGuesses);
-
-
-
-            if ((userGuesses === "a") || (userGuesses === "b") || (userGuesses === "c")) {
-
-                if ((userGuesses === "a") && (computerGuesses === "a"))
-                    wins++;
-                else if ((userGuesses === "b") && (computerGuesses === "b"))
-                    wins++;
-                else if ((userGuesses === "c") && (computerGuesses === "c"))
-                    wins++;
-                else // may need another else if since losses are only counted if 9 guesses missed.
-                    losses++;
-            }
-
-            letterCount.push(userGuesses);
-
-            guessesRemaining = guessesRemaining - 1;
-
-
-
-
-            
-            document.querySelector("#game").innerHTML = "<p>Guess what letter I'm thinking of:</p>" +
-                "<p> Wins " + wins + "</p>" + "<p>Losses " + losses + "</p>" +
-                "<p> Guesses Left " + guessesRemaining + "</p>" +
-                "<p>Your Guesses so far: " + letterCount + "</p>";
-
-
-
-        }
-
-
+    <script src="Assets/javascript/game.js">
     </script>
+
+    <footer>
+
+        <img class="psychic game image" src="Assets/images/AreYouPsychic.jpg" alt="Work">
+    </footer>
 </body>
 
 </html>

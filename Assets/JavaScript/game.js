@@ -24,6 +24,8 @@
             document.querySelector("#guessesMade").innerHTML = letterCount.join();
         }
 
+        reset();
+
         document.onkeyup = function (event) {
 
             var userGuesses = event.key;

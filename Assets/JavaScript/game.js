@@ -23,10 +23,9 @@
             document.querySelector("#guessesLeft").innerHTML = guessesRemaining;
             document.querySelector("#guessesMade").innerHTML = letterCount.join();
         }
-
-        reset();
-
-        document.onkeyup = function (event) {
+             reset();
+        
+         document.onkeyup = function (event) {
 
             var userGuesses = event.key;
             console.log(userGuesses);
